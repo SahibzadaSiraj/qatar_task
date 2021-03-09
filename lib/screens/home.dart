@@ -52,7 +52,12 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Expanded(
-                    child: ListView.builder(
+                    child:
+                    dataState.dataList.length==0?
+                        Center(
+                          child: CircularProgressIndicator(),
+                        ):
+                    ListView.builder(
                         controller: _scrollController,
                         itemCount: dataState.dataList.length,
                         itemBuilder: (context, index) {
